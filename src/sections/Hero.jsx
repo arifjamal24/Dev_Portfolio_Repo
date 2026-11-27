@@ -1,4 +1,5 @@
-import {Button} from '@/components/Button';
+import { Button } from '@/components/Button';
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
 import { ArrowRight } from 'lucide-react';
 
 export const Hero = () => {
@@ -62,12 +63,18 @@ export const Hero = () => {
                             </p>
                         </div>
 
-                    {/* Call To Actions (CTAs) */}
-                    <div>
-                        <Button size="lg">
-                            Contact Me <ArrowRight className='w-5 h-5' />
-                        </Button>
-                    </div>
+                        {/* Call To Actions (CTAs) */}
+                        <div className='flex flex-wrap gap-4 animate-fade-in animation-delay-300'>
+                            <Button size="lg">
+                                Contact Me <ArrowRight className='w-5 h-5' />
+                            </Button>
+                            <AnimatedBorderButton />
+                        </div>
+
+                        {/* Social Links */}
+                        <div>
+                            <span>Follow: </span>
+                        </div>
                     </div>
                     {/* Right Column - Profile Image */}
                 </div>
