@@ -1,6 +1,7 @@
 import { Button } from '@/components/Button';
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Github, Linkedin, Twitter} from 'lucide-react';
+
 
 export const Hero = () => {
     return (
@@ -72,8 +73,20 @@ export const Hero = () => {
                         </div>
 
                         {/* Social Links */}
-                        <div>
-                            <span>Follow: </span>
+                        <div className='flex items-center gap-4 animate-fade-in animation-delay-400'>
+                            <span className='text-sm text-muted-foreground'>Follow: </span>
+                            {[ 
+                                // actual link in href
+                                {icon: Github, href: "http://github.com/yourname"},
+                                {icon: Linkedin, href: "http://linkedin.com/in/yourname"},
+                                {icon: Twitter, href: "http://twitter.com/yourname"},
+                            ].map((social, idx) => (
+                                <a key={idx} href={social.href}
+                                className='p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300'
+                                >
+                                    {<social.icon className='w-5 h-5' />}
+                                </a>
+                            ))}
                         </div>
                     </div>
                     {/* Right Column - Profile Image */}
